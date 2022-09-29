@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
+
+  System.out.println("This program converts miles to meters, feet to meters, centimeters to inches, and kilograms to pounds.");
+	System.out.println("Are you converting miles, feet, centimeters, or kilograms? Type exit to leave.");
+	String convert = input.next();
+	
+	if(convert.equals("exit")){
+	    System.out.println("You are now exiting. Thank you.");
+	}
+	else {
+	
+	System.out.println("Enter the value: ");
+	
+	
+	// loops until the response is a number
+	while (!input.hasNextInt()) {
+    System.out.println("Invalid response, please try again.");
+    input.next();
+}
+
+    int value = input.nextInt();
+	double factor = 0;
+	
+	if (convert.equals("miles")){
+		factor = value * 1609;
+		System.out.printf("Conversion: " + value + " mi " + " becomes " + factor + " meters.");
+	}
+	else if (convert.equals("feet")){
+		factor = value * 0.305;
+		System.out.printf("Conversion: " + value + " ft " + " becomes " + factor + " meters.");
+	}
+	else if (convert.equals("centimeters")){
+		factor = value * 0.394;
+		System.out.printf("Conversion: " + value + " cm "  + " becomes " + factor + " inches.");
+	}
+	else if (convert.equals("kilograms")){
+		factor = value * 2.204;
+		System.out.printf("Conversion: " + value + " kg "  + " becomes " + factor + " lbs.");
+	}
+	}
+	}
+}
+
+	
